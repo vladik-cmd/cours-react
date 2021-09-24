@@ -22,10 +22,12 @@ export default class PostAddForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    this.props.onAdd(this.state.text);
+    if (this.state.text !== '') {
+      this.props.onAdd(this.state.text);
+    }
     this.setState({
-         text: ''
-    })
+      text: '',
+    });
   }
   render() {
     return (
